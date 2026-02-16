@@ -1,6 +1,7 @@
 # Domains Checker
 
-Herramienta CLI en Python para generar variantes de dominios, combinarlas con TLDs y validar su estado (`taken`/`available`) con chequeos de red.
+Herramienta CLI en Python para validar si estas disponibles o tomados (`taken`/`available`) y devolver con quien se hizo el registo.
+Tambien puede verificar si variantes del dominio con letras en vez de numeros, tambien estan disponibles.
 
 ![Domains Checker](images/domains-checker.png)
 
