@@ -16,6 +16,7 @@ Tambien puede verificar si variantes del dominio con letras en vez de numeros, t
   - `dominio.app`
   - `dominio.etc`
   - variantes tipográficas según `config.json`.
+  - No genera ni consulta subdominios (por ejemplo `www.*`).
 - Ejecuta chequeos concurrentes:
   - DNS
   - HTTP/HTTPS

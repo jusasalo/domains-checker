@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, List, Set, Tuple
+from typing import Dict, List, Tuple
 
 from modules.core.models import DomainCandidate, DomainSource, VariantsConfig
 from modules.core.variants import generate_variant_map
@@ -29,21 +29,6 @@ def expand_candidates(
                     )
                 else:
                     existing.strategies.update(strategy_set)
-
-                www_domain = f"www.{fqdn}"
-                www_strategies: Set[str] = set(strategy_set)
-                www_strategies.add("www_prefix")
-                www_existing = candidate_map.get(www_domain)
-                if www_existing is None:
-                    candidate_map[www_domain] = DomainCandidate(
-                        domain=www_domain,
-                        base=base,
-                        variant=variant,
-                        tld=tld,
-                        strategies=www_strategies,
-                    )
-                else:
-                    www_existing.strategies.update(www_strategies)
 
     candidates = list(candidate_map.values())
     candidates.sort(key=lambda item: item.domain)
