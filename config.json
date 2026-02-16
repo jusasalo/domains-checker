@@ -1,0 +1,32 @@
+{
+  "variations": {
+    "o": ["0"],
+    "i": ["1"]
+  },
+  "timeout_seconds": 5,
+  "check_ssl": true,
+  "take_screenshot": false,
+  "output": {
+    "dir": "output",
+    "format": ["json", "csv"],
+    "console": true,
+    "sort_by": ["domain"],
+    "columns": [
+      "domain",
+      "tlds",
+      "status",
+      "expiration_date",
+      "registrar_name",
+      "registrar_url"
+    ],
+    "console_domain_width": 20,
+    "console_column_widths": {
+      "domain": 20,
+      "tlds": 6,
+      "status": 10,
+      "expiration_date": 20,
+      "registrar_name": 22,
+      "registrar_url": 45
+    }
+  }
+}

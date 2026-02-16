@@ -1,0 +1,27 @@
+# Virtual environment
+.venv/
+venv/
+
+# Python cache/artifacts
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Build/distribution
+build/
+dist/
+*.egg-info/
+
+# Local output artifacts
+output/results.json
+output/results.csv
