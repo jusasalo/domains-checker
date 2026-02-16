@@ -9,8 +9,12 @@ Tambien puede verificar si variantes del dominio con letras en vez de numeros, t
 
 - Lee dominios base y TLDs desde `domains.json`.
 - Genera candidatos:
-  - `dominio.tld`
-  - `www.dominio.tld`
+  - `dominio.com`
+  - `dominio.net`
+  - `dominio.site`
+  - `dominio.org`
+  - `dominio.app`
+  - `dominio.etc`
   - variantes tipográficas según `config.json`.
 - Ejecuta chequeos concurrentes:
   - DNS
