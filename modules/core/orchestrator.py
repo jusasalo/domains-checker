@@ -212,24 +212,26 @@ async def run_pipeline(
             )
             for candidate in candidates
         ]
-        for task in asyncio.as_completed(tasks):
-            try:
-                result = await task
-            except Exception as exc:  # pragma: no cover # pylint: disable=broad-exception-caught
-                result = DomainResult(
-                    domain="unknown",
-                    base="unknown",
-                    variant="unknown",
-                    tld="unknown",
-                    strategies=[],
-                    status="unknown",
-                    available=None,
-                    active=False,
-                    resolves=False,
-                    registrar=RegistrarResult(queried=False),
-                    errors=[f"Unhandled orchestrator error: {exc}"],
+        finished = await asyncio.gather(*tasks, return_exceptions=True)
+        for item in finished:
+            if isinstance(item, Exception):
+                results.append(
+                    DomainResult(
+                        domain="unknown",
+                        base="unknown",
+                        variant="unknown",
+                        tld="unknown",
+                        strategies=[],
+                        status="unknown",
+                        available=None,
+                        active=False,
+                        resolves=False,
+                        registrar=RegistrarResult(queried=False),
+                        errors=[f"Unhandled orchestrator error: {item}"],
+                    )
                 )
-            results.append(result)
+                continue
+            results.append(item)
 
     if config.checks.http.enabled and httpx_lib is not None:
         timeout_s = ms_to_seconds(config.timeouts_ms.http)
@@ -248,5 +250,4 @@ async def run_pipeline(
     else:
         await run_with_client(None)
 
-    results.sort(key=lambda item: item.domain)
     return results, warnings

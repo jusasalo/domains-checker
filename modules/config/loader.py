@@ -54,7 +54,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "dir": "output",
         "format": ["json", "csv"],
         "console": True,
-        "sort_by": ["domain"],
+        "sort_by": [],
         "columns": [
             "domain",
             "tlds",
@@ -198,10 +198,10 @@ def _normalize_output_formats(raw_formats: Any) -> List[str]:
 
 def _normalize_sort_by(raw_sort_by: Any) -> List[str]:
     if not isinstance(raw_sort_by, list):
-        return ["domain"]
+        return []
     sort_by = [str(item).strip() for item in raw_sort_by]
     sort_by = [item for item in sort_by if item]
-    return _dedupe_keep_order(sort_by) or ["domain"]
+    return _dedupe_keep_order(sort_by)
 
 
 def _normalize_output_columns(raw_columns: Any) -> List[str]:

@@ -10,7 +10,7 @@
     "dir": "output",
     "format": ["json", "csv"],
     "console": true,
-    "sort_by": ["domain"],
+    "sort_by": [],
     "columns": [
       "domain",
       "tlds",

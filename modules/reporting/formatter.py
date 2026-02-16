@@ -34,7 +34,7 @@ def _sort_token(value: Any) -> Any:
 def sort_results(results: Sequence[DomainResult], sort_by: Iterable[str]) -> List[DomainResult]:
     sort_keys = [key for key in sort_by if key]
     if not sort_keys:
-        sort_keys = ["domain"]
+        return list(results)
 
     def key_builder(item: DomainResult) -> Any:
         payload = item.to_dict()
@@ -133,6 +133,7 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
     columns = [column for column in output_config.columns if column != "registrar_url"]
     if not columns:
         columns = ["domain", "tlds", "status", "expiration_date", "registrar_name"]
+    group_column = "domain" if "domain" in columns else "full_domain"
     widths = {column: _console_width(column, output_config) for column in columns}
     header_parts = [_fit(column, widths[column]) for column in columns]
     header = " ".join(header_parts)
@@ -140,7 +141,11 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
     if rich_console_class is not None:
         console = rich_console_class()
         console.print(header)
+        previous_group = None
         for result in results:
+            current_group = _field_text(result, group_column)
+            if previous_group is not None and current_group != previous_group:
+                console.print("")
             parts: List[str] = []
             for column in columns:
                 text = _field_text(result, column)
@@ -150,15 +155,21 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
                 else:
                     parts.append(_fit(text, widths[column]))
             console.print(" ".join(parts))
+            previous_group = current_group
         return
 
     print(header)
+    previous_group = None
     for result in results:
+        current_group = _field_text(result, group_column)
+        if previous_group is not None and current_group != previous_group:
+            print("")
         parts = [
             _fit(_field_text(result, column), widths[column]) for column in columns
         ]
         line = " ".join(parts)
         print(_ansi_color(line, result.status))
+        previous_group = current_group
 
 
 def summarize_results(results: Sequence[DomainResult]) -> str:

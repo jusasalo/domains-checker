@@ -31,7 +31,6 @@ def expand_candidates(
                     existing.strategies.update(strategy_set)
 
     candidates = list(candidate_map.values())
-    candidates.sort(key=lambda item: item.domain)
     if not candidates:
         warnings.append("No se generaron candidatos.")
     return candidates, warnings

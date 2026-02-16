@@ -1,11 +1,12 @@
 {
   "domains": [
-    "nexsystem",
-    "nexsystems",
+    "datadevs",
     "nextsystem",
     "nextsystems",
-    "datadevs",
-    "datalab"
+    "easysystem", 
+    "easysystems",
+    "easy-system",
+    "easy-systems"
   ],
   "tlds": [
     "com",
