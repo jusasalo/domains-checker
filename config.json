@@ -12,8 +12,7 @@
     "console": true,
     "sort_by": [],
     "columns": [
-      "domain",
-      "tlds",
+      "full_domain",
       "status",
       "expiration_date",
       "registrar_name",
@@ -21,8 +20,7 @@
     ],
     "console_domain_width": 20,
     "console_column_widths": {
-      "domain": 20,
-      "tlds": 6,
+      "full_domain": 24,
       "status": 10,
       "expiration_date": 20,
       "registrar_name": 22,

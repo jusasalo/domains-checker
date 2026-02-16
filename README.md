@@ -83,6 +83,7 @@ Parámetros más importantes:
 - `check_ssl`: habilita validaciones TLS.
 - `output.format`: `json`, `csv` o ambos.
 - `output.columns`: columnas visibles en consola/CSV y en el bloque principal del JSON.
+  - Recomendado: usar `full_domain` en lugar de `domain` + `tlds`.
 - `output.sort_by`: si está vacío (`[]`), respeta el orden de `domains.json` (`domains` y luego `tlds`).
 - `output.console_domain_width`: ancho base de la columna `domain` en consola.
 - `output.console_column_widths`: ancho por columna para consola.

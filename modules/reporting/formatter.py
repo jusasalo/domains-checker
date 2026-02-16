@@ -132,8 +132,7 @@ def _fit(value: str, width: int) -> str:
 def render_console(results: Sequence[DomainResult], output_config: OutputConfig) -> None:
     columns = [column for column in output_config.columns if column != "registrar_url"]
     if not columns:
-        columns = ["domain", "tlds", "status", "expiration_date", "registrar_name"]
-    group_column = "domain" if "domain" in columns else "full_domain"
+        columns = ["full_domain", "status", "expiration_date", "registrar_name"]
     widths = {column: _console_width(column, output_config) for column in columns}
     header_parts = [_fit(column, widths[column]) for column in columns]
     header = " ".join(header_parts)
@@ -143,7 +142,7 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
         console.print(header)
         previous_group = None
         for result in results:
-            current_group = _field_text(result, group_column)
+            current_group = _domain_without_tld(result.domain)
             if previous_group is not None and current_group != previous_group:
                 console.print("")
             parts: List[str] = []
@@ -161,7 +160,7 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
     print(header)
     previous_group = None
     for result in results:
-        current_group = _field_text(result, group_column)
+        current_group = _domain_without_tld(result.domain)
         if previous_group is not None and current_group != previous_group:
             print("")
         parts = [

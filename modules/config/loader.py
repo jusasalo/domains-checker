@@ -56,8 +56,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         "console": True,
         "sort_by": [],
         "columns": [
-            "domain",
-            "tlds",
+            "full_domain",
             "status",
             "expiration_date",
             "registrar_name",
@@ -65,8 +64,7 @@ DEFAULT_CONFIG: Dict[str, Any] = {
         ],
         "console_domain_width": 20,
         "console_column_widths": {
-            "domain": 20,
-            "tlds": 6,
+            "full_domain": 24,
             "status": 10,
             "expiration_date": 20,
             "registrar_name": 22,
@@ -216,8 +214,7 @@ def _normalize_output_columns(raw_columns: Any) -> List[str]:
     }
     if not isinstance(raw_columns, list):
         return [
-            "domain",
-            "tlds",
+            "full_domain",
             "status",
             "expiration_date",
             "registrar_name",
@@ -225,9 +222,22 @@ def _normalize_output_columns(raw_columns: Any) -> List[str]:
         ]
     columns = [str(item).strip() for item in raw_columns]
     columns = [item for item in columns if item in allowed]
-    return _dedupe_keep_order(columns) or [
-        "domain",
-        "tlds",
+    columns = _dedupe_keep_order(columns)
+    if "full_domain" not in columns and (
+        "domain" in columns or "tlds" in columns
+    ):
+        merged_columns: List[str] = []
+        inserted = False
+        for column in columns:
+            if column in {"domain", "tlds"}:
+                if not inserted:
+                    merged_columns.append("full_domain")
+                    inserted = True
+                continue
+            merged_columns.append(column)
+        columns = _dedupe_keep_order(merged_columns)
+    return columns or [
+        "full_domain",
         "status",
         "expiration_date",
         "registrar_name",

@@ -114,7 +114,7 @@ def write_outputs(
         normalized = ["json"]
     columns = list(output_config.columns)
     if not columns:
-        columns = ["domain", "tlds", "status", "expiration_date", "registrar_name", "registrar_url"]
+        columns = ["full_domain", "status", "expiration_date", "registrar_name", "registrar_url"]
 
     output_paths: Dict[str, Path] = {}
     base_dir = output_dir.resolve()
