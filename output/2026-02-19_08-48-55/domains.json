@@ -1,11 +1,8 @@
 {
   "domains": [
-    "nexarium",
-    "Zenthor",
-    "Vindex",
-    "Novum", 
-    "Aurelius",
-    "Emeth"
+    "Altairix",
+    "Altarix",
+    "Nexorium"
   ],
   "tlds": [
     "com",
@@ -13,6 +10,7 @@
     "tech",
     "site",
     "app",
+    "io",
     "org"
   ]
 }

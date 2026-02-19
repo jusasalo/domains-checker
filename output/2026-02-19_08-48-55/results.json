@@ -1,0 +1,914 @@
+[
+  {
+    "full_domain": "altairix.com",
+    "status": "taken",
+    "expiration_date": "2026-07-31T18:28:05Z",
+    "registrar_name": "Squarespace Domains II LLC",
+    "registrar_url": "http://domains2.squarespace.com",
+    "dns": {
+      "queried": true,
+      "exists": true,
+      "records": {
+        "A": [
+          "75.2.60.5"
+        ]
+      },
+      "error": null,
+      "latency_ms": 356
+    },
+    "http": {
+      "queried": true,
+      "reachable": true,
+      "scheme": "https",
+      "status_code": 200,
+      "final_url": "https://altairix.com/",
+      "redirects": 0,
+      "latency_ms": 365,
+      "error": null
+    },
+    "tls": {
+      "queried": true,
+      "handshake_ok": true,
+      "issuer": "countryName=US, organizationName=Let's Encrypt, commonName=E7",
+      "subject_alt_names": [
+        "altairix.com",
+        "www.altairix.com"
+      ],
+      "not_before": "2026-02-19T13:23:50+00:00",
+      "not_after": "2026-05-20T13:23:49+00:00",
+      "days_to_expiry": 89,
+      "expires_soon": false,
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_128_GCM_SHA256",
+      "error": null,
+      "skipped_reason": null
+    },
+    "errors": []
+  },
+  {
+    "full_domain": "altairix.net",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 44
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altairix.tech",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 83
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altairix.site",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 104
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altairix.app",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 99
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altairix.io",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 95
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altairix.org",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 108
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altarix.com",
+    "status": "taken",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": true,
+      "records": {
+        "A": [
+          "13.248.160.137",
+          "76.223.34.124"
+        ]
+      },
+      "error": null,
+      "latency_ms": 266
+    },
+    "http": {
+      "queried": true,
+      "reachable": true,
+      "scheme": "https",
+      "status_code": 500,
+      "final_url": "https://www.deltek.com/en/System/system-error.aspx?aspxerrorpath=/architecture-and-engineering/specpoint",
+      "redirects": 3,
+      "latency_ms": 2305,
+      "error": null
+    },
+    "tls": {
+      "queried": true,
+      "handshake_ok": true,
+      "issuer": "countryName=US, organizationName=Let's Encrypt, commonName=R12",
+      "subject_alt_names": [
+        "altarix.com"
+      ],
+      "not_before": "2026-01-07T01:52:08+00:00",
+      "not_after": "2026-04-07T01:52:07+00:00",
+      "days_to_expiry": 46,
+      "expires_soon": false,
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_256_GCM_SHA384",
+      "error": null,
+      "skipped_reason": null
+    },
+    "errors": [
+      "RDAP HTTP 429 (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  },
+  {
+    "full_domain": "altarix.net",
+    "status": "taken",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": true,
+      "records": {
+        "A": [
+          "13.248.243.5",
+          "76.223.105.230"
+        ]
+      },
+      "error": null,
+      "latency_ms": 237
+    },
+    "http": {
+      "queried": true,
+      "reachable": true,
+      "scheme": "https",
+      "status_code": 200,
+      "final_url": "https://altarix.net/",
+      "redirects": 0,
+      "latency_ms": 522,
+      "error": null
+    },
+    "tls": {
+      "queried": true,
+      "handshake_ok": true,
+      "issuer": "countryName=US, stateOrProvinceName=Arizona, localityName=Scottsdale, organizationName=GoDaddy.com, Inc., organizationalUnitName=http://certs.godaddy.com/repository/, commonName=Go Daddy Secure Certificate Authority - G2",
+      "subject_alt_names": [
+        "altarix.net",
+        "www.altarix.net"
+      ],
+      "not_before": "2026-01-08T09:53:42+00:00",
+      "not_after": "2026-04-08T09:53:42+00:00",
+      "days_to_expiry": 47,
+      "expires_soon": false,
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_128_GCM_SHA256",
+      "error": null,
+      "skipped_reason": null
+    },
+    "errors": [
+      "RDAP timeout (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  },
+  {
+    "full_domain": "altarix.tech",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 120
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altarix.site",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 115
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altarix.app",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 111
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altarix.io",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 126
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "altarix.org",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 132
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "nexorium.com",
+    "status": "unknown",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": null,
+      "latency_ms": 128
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed",
+      "RDAP HTTP 429 (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  },
+  {
+    "full_domain": "nexorium.net",
+    "status": "unknown",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": null,
+      "latency_ms": 292
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed",
+      "RDAP HTTP 429 (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  },
+  {
+    "full_domain": "nexorium.tech",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 123
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "nexorium.site",
+    "status": "taken",
+    "expiration_date": "2026-04-14T23:59:59.0Z",
+    "registrar_name": "Namecheap",
+    "registrar_url": "https://rdap.centralnic.com/site/entity/1068",
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": null,
+      "latency_ms": 310
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "nexorium.app",
+    "status": "available",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": false,
+      "records": {},
+      "error": "NXDOMAIN",
+      "latency_ms": 129
+    },
+    "http": {
+      "queried": true,
+      "reachable": false,
+      "scheme": null,
+      "status_code": null,
+      "final_url": null,
+      "redirects": 0,
+      "latency_ms": null,
+      "error": "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    },
+    "tls": {
+      "queried": false,
+      "handshake_ok": null,
+      "issuer": null,
+      "subject_alt_names": [],
+      "not_before": null,
+      "not_after": null,
+      "days_to_expiry": null,
+      "expires_soon": null,
+      "tls_version": null,
+      "cipher": null,
+      "error": null,
+      "skipped_reason": "Skipped because HTTPS is not reachable"
+    },
+    "errors": [
+      "NXDOMAIN",
+      "https ConnectError: [Errno 11001] getaddrinfo failed; https ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed; http ConnectError: [Errno 11001] getaddrinfo failed"
+    ]
+  },
+  {
+    "full_domain": "nexorium.io",
+    "status": "taken",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": true,
+      "records": {
+        "A": [
+          "35.219.200.56"
+        ]
+      },
+      "error": null,
+      "latency_ms": 490
+    },
+    "http": {
+      "queried": true,
+      "reachable": true,
+      "scheme": "https",
+      "status_code": 200,
+      "final_url": "https://nexorium.io/",
+      "redirects": 0,
+      "latency_ms": 716,
+      "error": null
+    },
+    "tls": {
+      "queried": true,
+      "handshake_ok": true,
+      "issuer": "countryName=US, organizationName=Google Trust Services, commonName=WR3",
+      "subject_alt_names": [
+        "*.nexorium.io",
+        "nexorium.io"
+      ],
+      "not_before": "2026-02-03T00:59:41+00:00",
+      "not_after": "2026-05-04T01:55:36+00:00",
+      "days_to_expiry": 73,
+      "expires_soon": false,
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_256_GCM_SHA384",
+      "error": null,
+      "skipped_reason": null
+    },
+    "errors": [
+      "RDAP HTTP 429 (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  },
+  {
+    "full_domain": "nexorium.org",
+    "status": "taken",
+    "expiration_date": null,
+    "registrar_name": null,
+    "registrar_url": null,
+    "dns": {
+      "queried": true,
+      "exists": true,
+      "records": {
+        "A": [
+          "23.227.38.36"
+        ],
+        "AAAA": [
+          "2620:127:f00f:4::"
+        ]
+      },
+      "error": null,
+      "latency_ms": 485
+    },
+    "http": {
+      "queried": true,
+      "reachable": true,
+      "scheme": "https",
+      "status_code": 200,
+      "final_url": "https://www.nexorium.org/",
+      "redirects": 1,
+      "latency_ms": 1873,
+      "error": null
+    },
+    "tls": {
+      "queried": true,
+      "handshake_ok": true,
+      "issuer": "countryName=US, organizationName=Google Trust Services, commonName=WE1",
+      "subject_alt_names": [
+        "nexorium.org"
+      ],
+      "not_before": "2026-02-05T09:52:33+00:00",
+      "not_after": "2026-05-06T10:52:32+00:00",
+      "days_to_expiry": 75,
+      "expires_soon": false,
+      "tls_version": "TLSv1.3",
+      "cipher": "TLS_AES_256_GCM_SHA384",
+      "error": null,
+      "skipped_reason": null
+    },
+    "errors": [
+      "RDAP HTTP 429 (attempt 1); RDAP HTTP 429 (attempt 2)"
+    ]
+  }
+]
