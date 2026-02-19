@@ -104,7 +104,7 @@ def main() -> int:
     if args.output_folder:
         run_output_dir = Path("output") / args.output_folder
     else:
-        now = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+        now = datetime.now().strftime("%Y-%m-%d-%H-%M-%S")
         run_output_dir = Path("output") / now
     run_output_dir.mkdir(parents=True, exist_ok=True)
 

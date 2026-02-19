@@ -48,9 +48,21 @@ def _determine_status(
     if registrar.is_registered is False:
         return "available", True
 
+    # If registrar lookup was attempted but could not confirm status
+    # (e.g. rate-limited / transient RDAP errors), avoid false positives.
+    registrar_uncertain = registrar.queried and registrar.is_registered is None
+    if registrar_uncertain:
+        return "unknown", None
+
     nothing_reachable = (http.queried and http.reachable is False) or (not http.queried)
     tls_not_ok = (tls.queried and tls.handshake_ok is False) or (not tls.queried)
-    if dns.queried and dns.exists is False and nothing_reachable and tls_not_ok:
+    if (
+        not registrar.queried
+        and dns.queried
+        and dns.exists is False
+        and nothing_reachable
+        and tls_not_ok
+    ):
         return "available", True
 
     return "unknown", None
