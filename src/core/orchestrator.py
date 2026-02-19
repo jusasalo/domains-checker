@@ -3,11 +3,11 @@ from __future__ import annotations
 import asyncio
 from typing import List, Optional, Tuple
 
-from modules.checks.dns_check import run_dns_check
-from modules.checks.http_check import run_http_check
-from modules.checks.registrar_check import run_registrar_check
-from modules.checks.tls_check import run_tls_check
-from modules.core.models import (
+from src.checks.dns_check import run_dns_check
+from src.checks.http_check import run_http_check
+from src.checks.registrar_check import run_registrar_check
+from src.checks.tls_check import run_tls_check
+from src.core.models import (
     DNSResult,
     DomainCandidate,
     DomainResult,
@@ -17,9 +17,9 @@ from modules.core.models import (
     SearchConfig,
     TLSResult,
 )
-from modules.core.tlds import expand_candidates
-from modules.utils.concurrency import HostLimiter
-from modules.utils.net import compact_errors, ms_to_seconds
+from src.core.tlds import expand_candidates
+from src.utils.concurrency import HostLimiter
+from src.utils.net import compact_errors, ms_to_seconds
 
 try:
     import httpx as httpx_lib

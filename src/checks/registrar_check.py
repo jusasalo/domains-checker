@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Any, List, Optional, Tuple
 
-from modules.core.models import RegistrarResult
-from modules.utils.net import ms_to_seconds
+from src.core.models import RegistrarResult
+from src.utils.net import ms_to_seconds
 
 try:
     import httpx as httpx_lib

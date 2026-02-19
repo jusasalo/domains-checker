@@ -3,7 +3,7 @@ from __future__ import annotations
 import sys
 from typing import Any, Iterable, List, Sequence
 
-from modules.core.models import DomainResult, OutputConfig
+from src.core.models import DomainResult, OutputConfig
 
 try:
     from rich.console import Console as rich_console_class

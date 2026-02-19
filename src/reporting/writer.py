@@ -5,7 +5,7 @@ import json
 from pathlib import Path
 from typing import Dict, List, Sequence
 
-from modules.core.models import DomainResult, OutputConfig
+from src.core.models import DomainResult, OutputConfig
 
 
 def _public_status(status: str) -> str:

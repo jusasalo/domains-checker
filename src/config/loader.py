@@ -5,7 +5,7 @@ import re
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
-from modules.core.models import (
+from src.core.models import (
     ChecksConfig,
     ConcurrencyConfig,
     DnsCheckConfig,
@@ -442,6 +442,3 @@ def load_bundle(
     source = DomainSource(domains=domains, tlds=tlds)
     warnings = domain_warnings + config_warnings
     return source, config, output_dir, warnings
-
-
-

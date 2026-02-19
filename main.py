@@ -8,10 +8,10 @@ import shutil
 import csv
 from datetime import datetime
 
-from modules.config.loader import load_bundle
-from modules.core.orchestrator import run_pipeline
-from modules.reporting.formatter import render_console, sort_results, summarize_results
-from modules.reporting.writer import write_outputs
+from src.config.loader import load_bundle
+from src.core.orchestrator import run_pipeline
+from src.reporting.formatter import render_console, sort_results, summarize_results
+from src.reporting.writer import write_outputs
 
 
 def build_parser() -> argparse.ArgumentParser:

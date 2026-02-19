@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import Dict, List, Tuple
 
-from modules.core.models import DomainCandidate, DomainSource, VariantsConfig
-from modules.core.variants import generate_variant_map
+from src.core.models import DomainCandidate, DomainSource, VariantsConfig
+from src.core.variants import generate_variant_map
 
 
 def expand_candidates(

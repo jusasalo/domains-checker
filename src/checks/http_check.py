@@ -4,8 +4,8 @@ import asyncio
 import time
 from typing import Any, List, Optional
 
-from modules.core.models import HTTPResult, HttpCheckConfig
-from modules.utils.net import ms_to_seconds
+from src.core.models import HTTPResult, HttpCheckConfig
+from src.utils.net import ms_to_seconds
 
 try:
     import httpx as httpx_lib

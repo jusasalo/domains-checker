@@ -5,8 +5,8 @@ import socket
 import time
 from typing import Dict, List
 
-from modules.core.models import DNSResult, DnsCheckConfig
-from modules.utils.net import ms_to_seconds
+from src.core.models import DNSResult, DnsCheckConfig
+from src.utils.net import ms_to_seconds
 
 try:
     import dns.resolver as dns_resolver  # type: ignore

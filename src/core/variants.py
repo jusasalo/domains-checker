@@ -3,7 +3,7 @@ from __future__ import annotations
 import re
 from typing import Dict, Iterable, List, Set
 
-from modules.core.models import VariantsConfig
+from src.core.models import VariantsConfig
 
 
 LABEL_RE = re.compile(r"^[a-z0-9-]{1,63}$")

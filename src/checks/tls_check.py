@@ -7,8 +7,8 @@ import ssl
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from modules.core.models import TLSResult
-from modules.utils.net import ms_to_seconds
+from src.core.models import TLSResult
+from src.utils.net import ms_to_seconds
 
 
 def _flatten_name(entries: Any) -> Optional[str]:
