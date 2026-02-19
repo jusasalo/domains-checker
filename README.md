@@ -99,6 +99,55 @@ Parámetros más importantes:
     - `tls`
     - `errors`
 
+## **Versionado y relectura de resultados**
+
+- Al ejecutar una búsqueda completa, el programa crea una subcarpeta dentro de `output/` con la fecha y hora de ejecución en formato compacto ISO: `YYYY-MM-DD_HH-MM-SS`.
+- Dentro de esa carpeta se guardan los archivos:
+  - `results.csv` (CSV con las columnas configuradas)
+  - `results.json` (JSON con la información completa)
+  - `domains.json` (copia exacta del archivo de entrada usado en esa ejecución)
+- Esto evita sobrescribir búsquedas anteriores y permite conservar historiales.
+
+### Opciones nuevas
+
+- `--output-folder <NOMBRE>`: indica una subcarpeta dentro de `output/` a usar. Si no se especifica, el programa crea una carpeta con timestamp.
+- `--show-results`: modo lectura — muestra en consola el `results.csv` de la carpeta indicada con `--output-folder`.
+
+Comportamiento y validaciones:
+- Si `output/` no existe, se crea automáticamente.
+- `--show-results` requiere que indique `--output-folder` con el nombre de la subcarpeta a mostrar.
+- Si la carpeta o `results.csv` no existen, el programa mostrará un mensaje de error claro.
+- Si `results.csv` está corrupto o no puede leerse, se muestra un error explicativo.
+
+La visualización en consola usa `rich` si está disponible para mostrar una tabla coloreada; si no, hace un fallback a una tabla de texto simple.
+
+### Ejemplos
+
+Ejecutar una búsqueda normal (crea carpeta con timestamp):
+
+```powershell
+.\.venv\Scripts\python main.py
+```
+
+Ejecutar y forzar una carpeta de salida (útil para reproducir o sobrescribir manualmente):
+
+```powershell
+.\.venv\Scripts\python main.py --output-folder my_manual_run
+```
+
+Mostrar resultados de una ejecución previa en `output/test_run`:
+
+```powershell
+.\.venv\Scripts\python main.py --show-results --output-folder test_run
+```
+
+Si desea la presentación en colores, instale `rich`:
+
+```powershell
+pip install rich
+```
+
+
 ## Notas
 
 - `expiration_date`, `registrar_name` y `registrar_url` dependen de lo que exponga RDAP para cada TLD/registrar.

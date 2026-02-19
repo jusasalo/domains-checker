@@ -1,0 +1,19 @@
+{
+  "domains": [
+    "datadevs",
+    "nextsystem",
+    "nextsystems",
+    "easysystem", 
+    "easysystems",
+    "easy-system",
+    "easy-systems"
+  ],
+  "tlds": [
+    "com",
+    "net",
+    "tech",
+    "site",
+    "app",
+    "org"
+  ]
+}
