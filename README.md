@@ -1,40 +1,27 @@
 # Domains Checker
 
-Herramienta CLI en Python para validar si estas disponibles o tomados (`taken`/`available`) y devolver con quien se hizo el registo.
-Tambien puede verificar si variantes del dominio con letras en vez de numeros, tambien estan disponibles.
+Herramienta CLI en Python para comprobar disponibilidad de dominios y
+generar variantes tipográficas. Exporta resultados en JSON y CSV y puede
+mostrar tablas en la consola.
 
 ![Domains Checker](images/domains-checker-demo.png)
 
-## ¿Qué hace este proyecto?
+## Qué hace este proyecto
 
 - Lee dominios base y TLDs desde `domains.json`.
-- Genera candidatos:
-  - `dominio.com`
-  - `dominio.net`
-  - `dominio.site`
-  - `dominio.org`
-  - `dominio.app`
-  - `dominio.etc`
-  - variantes tipográficas según `config.json`.
-  - No genera ni consulta subdominios (por ejemplo `www.*`).
-- Ejecuta chequeos concurrentes:
-  - DNS
-  - HTTP/HTTPS
-  - TLS (si aplica)
-  - Registrar (RDAP) para `registrar_name`, `registrar_url` y `expiration_date` cuando esté disponible.
-- Clasifica cada dominio como:
-  - `taken`
-  - `available`
-  - `unknown`
-- Exporta resultados a JSON y CSV, y muestra salida en consola.
+- Genera candidatos, p. ej.: `dominio.com`, `dominio.net`.
+- Genera variantes tipográficas según `config.json`.
+- Ejecuta chequeos concurrentes: DNS, HTTP/HTTPS, TLS y RDAP.
+- Clasifica dominios: `taken`, `available` o `unknown`.
+- Exporta a `results.json` y `results.csv`.
 
 ## Estructura principal
 
 - `main.py`: entrypoint del script.
 - `domains.json`: dominios base y TLDs a revisar.
-- `config.json`: timeouts, variaciones, formato de salida y columnas.
+- `config.json`: timeouts, variaciones y formato de salida.
 - `modules/`: lógica modular (checks, core, reporting, config, utils).
-- `output/`: resultados generados (`results.json`, `results.csv`).
+- `output/`: resultados generados.
 
 ## Requisitos
 
@@ -57,15 +44,16 @@ Ejecución con archivos por defecto (`domains.json` y `config.json`):
 .\.venv\Scripts\python main.py
 ```
 
-También puedes indicar rutas explícitas:
+Indicar archivos explícitos:
 
 ```powershell
-.\.venv\Scripts\python main.py --domains-file domains.json --config-file config.json
+.\.venv\Scripts\python main.py --domains-file domains.json \
+  --config-file config.json
 ```
 
 ## Configuración
 
-### `domains.json`
+### `domains.json` (ejemplo)
 
 ```json
 {
@@ -74,85 +62,74 @@ También puedes indicar rutas explícitas:
 }
 ```
 
-### `config.json`
+### Parámetros relevantes (`config.json`)
 
-Parámetros más importantes:
-
-- `variation.variation_check`: activa/desactiva la generacion de variaciones (`false` por defecto).
-- `variation.variation_list`: reglas de sustitución (ej. `a -> 4`, `e -> 3`, `i -> 1`, `o -> 0`).
+- `variation.variation_check`: activa la generación de variaciones.
+- `variation.variation_list`: reglas de sustitución (ej. `a -> 4`).
 - `timeout_seconds`: timeout por intento.
 - `check_ssl`: habilita validaciones TLS.
 - `output.format`: `json`, `csv` o ambos.
-- `output.columns`: columnas visibles en consola/CSV y en el bloque principal del JSON.
-  - Recomendado: usar `full_domain` en lugar de `domain` + `tlds`.
-- `output.sort_by`: si está vacío (`[]`), respeta el orden de `domains.json` (`domains` y luego `tlds`).
-- `output.console_domain_width`: ancho base de la columna `domain` en consola.
-- `output.console_column_widths`: ancho por columna para consola.
+- `output.columns`: columnas visibles en CSV/consola.
+- `output.sort_by`: criterio de orden.
 
 ## Salidas
 
-- `output/results.csv`
-  - Solo columnas configuradas en `output.columns`.
-- `output/results.json`
-  - Incluye columnas configuradas + secciones técnicas completas:
-    - `dns`
-    - `http`
-    - `tls`
-    - `errors`
+- `output/results.csv`: columnas según `output.columns`.
+- `output/results.json`: incluye datos técnicos (dns, http, tls).
 
-## **Versionado y relectura de resultados**
+## Versionado y relectura
 
-- Al ejecutar una búsqueda completa, el programa crea una subcarpeta dentro de `output/` con la fecha y hora de ejecución en formato compacto ISO: `YYYY-MM-DD_HH-MM-SS`.
-- Dentro de esa carpeta se guardan los archivos:
-  - `results.csv` (CSV con las columnas configuradas)
-  - `results.json` (JSON con la información completa)
-  - `domains.json` (copia exacta del archivo de entrada usado en esa ejecución)
-- Esto evita sobrescribir búsquedas anteriores y permite conservar historiales.
+Al ejecutar una búsqueda completa, el programa crea una subcarpeta en
+`output/` con la fecha y hora en formato `YYYY-MM-DD_HH-MM-SS`.
 
-### Opciones nuevas
+Dentro de esa carpeta se guardan:
 
-- `--output-folder <NOMBRE>`: indica una subcarpeta dentro de `output/` a usar. Si no se especifica, el programa crea una carpeta con timestamp.
-- `--show-results`: modo lectura — muestra en consola el `results.csv` de la carpeta indicada con `--output-folder`.
+- `results.csv`
+- `results.json`
+- `domains.json` (copia del archivo usado en la ejecución)
 
-Comportamiento y validaciones:
+## Opciones relevantes
+
+- `--output-folder <NOMBRE>`: subcarpeta en `output/` a usar.
+- `--show-results`: muestra `results.csv` de la carpeta indicada.
+
+Comportamientos:
+
 - Si `output/` no existe, se crea automáticamente.
-- `--show-results` requiere que indique `--output-folder` con el nombre de la subcarpeta a mostrar.
-- Si la carpeta o `results.csv` no existen, el programa mostrará un mensaje de error claro.
-- Si `results.csv` está corrupto o no puede leerse, se muestra un error explicativo.
+- `--show-results` requiere `--output-folder`.
+- Si la carpeta o `results.csv` no existen, se muestra un error claro.
 
-La visualización en consola usa `rich` si está disponible para mostrar una tabla coloreada; si no, hace un fallback a una tabla de texto simple.
+La visualización en consola usa `rich` si está disponible; si no,
+se muestra una tabla de texto simple.
 
-### Ejemplos
+## Ejemplos
 
-Ejecutar una búsqueda normal (crea carpeta con timestamp):
+Ejecutar y crear carpeta con timestamp:
 
 ```powershell
 .\.venv\Scripts\python main.py
 ```
 
-Ejecutar y forzar una carpeta de salida (útil para reproducir o sobrescribir manualmente):
+Usar carpeta forzada:
 
 ```powershell
 .\.venv\Scripts\python main.py --output-folder my_manual_run
 ```
 
-Mostrar resultados de una ejecución previa en `output/test_run`:
+Leer resultados previos:
 
 ```powershell
-.\.venv\Scripts\python main.py --show-results --output-folder test_run
+.\.venv\Scripts\python main.py --show-results \
+  --output-folder test_run
 ```
 
-Si desea la presentación en colores, instale `rich`:
+Instalar `rich` para colores:
 
 ```powershell
 pip install rich
 ```
 
-
 ## Notas
 
-- `expiration_date`, `registrar_name` y `registrar_url` dependen de lo que exponga RDAP para cada TLD/registrar.
-- Si un registro RDAP no publica ciertos datos, esos campos pueden venir vacíos.
-
-
-
+- `expiration_date`, `registrar_name` y `registrar_url` dependen de RDAP.
+- Si RDAP no publica datos, algunos campos pueden venir vacíos.

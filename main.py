@@ -4,6 +4,9 @@ import argparse
 import asyncio
 import sys
 from pathlib import Path
+import shutil
+import csv
+from datetime import datetime
 
 from modules.config.loader import load_bundle
 from modules.core.orchestrator import run_pipeline
@@ -12,6 +15,7 @@ from modules.reporting.writer import write_outputs
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Construye y devuelve el parser de argumentos de línea de comandos."""
     parser = argparse.ArgumentParser(description="Domain Checker + Variant Generator")
     parser.add_argument(
         "--domains-file",
@@ -37,10 +41,12 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
-def main() -> int:
-    import shutil
-    from datetime import datetime
-    import csv
+def main() -> int:  # pylint: disable=too-many-return-statements
+    """Función principal que orquesta la ejecución del programa.
+
+    Devuelve un código de salida entero adecuado para usar en el
+    entorno de sistema.
+    """
 
     parser = build_parser()
     args = parser.parse_args()
@@ -49,7 +55,10 @@ def main() -> int:
         # Mostrar results.csv de una subcarpeta de output
         folder = args.output_folder
         if not folder:
-            print("[ERROR] Debe especificar --output-folder para mostrar resultados.", file=sys.stderr)
+            print(
+                "[ERROR] Debe especificar --output-folder para mostrar resultados.",
+                file=sys.stderr,
+            )
             return 2
         out_dir = Path("output") / folder
         if not out_dir.exists() or not out_dir.is_dir():
@@ -63,7 +72,7 @@ def main() -> int:
             with csv_path.open("r", encoding="utf-8") as f:
                 reader = csv.reader(f)
                 rows = list(reader)
-        except Exception as exc:
+        except (OSError, csv.Error) as exc:
             print(f"[ERROR] Error leyendo CSV: {exc}", file=sys.stderr)
             return 2
         if not rows:
@@ -71,6 +80,7 @@ def main() -> int:
             return 0
         # Mostrar tabla con colores si rich está disponible
         try:
+            # Import dinámico opcional de `rich` para mejorar salida. pylint: disable=import-outside-toplevel
             from rich.console import Console
             from rich.table import Table
             console = Console()
@@ -92,7 +102,7 @@ def main() -> int:
 
     # --- Ejecución normal (búsqueda y guardado de resultados) ---
     try:
-        domains_cfg, search_cfg, _output_dir, warnings = load_bundle(
+        domains_cfg, search_cfg, _output_dir, pre_warnings = load_bundle(
             domains_file=args.domains_file,
             config_file=args.config_file,
         )
@@ -122,13 +132,13 @@ def main() -> int:
         return 0
 
     results = sort_results(results, search_cfg.output.sort_by)
-    all_warnings = warnings + runtime_warnings
+    all_warnings = pre_warnings + runtime_warnings
 
     # Guardar copia de domains.json usada
     domains_file_path = args.domains_file or Path("domains.json")
     try:
         shutil.copy(domains_file_path, run_output_dir / "domains.json")
-    except Exception as exc:
+    except OSError as exc:
         print(f"[WARN] No se pudo copiar domains.json: {exc}")
 
     written_paths = write_outputs(
@@ -149,5 +159,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    main()
-    # raise SystemExit(main())
+    raise SystemExit(main())
