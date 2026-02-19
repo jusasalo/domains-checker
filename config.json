@@ -1,7 +1,19 @@
 {
-  "variations": {
-    "o": ["0"],
-    "i": ["1"]
+  "variation": {
+    "variation_check": false,
+    "variation_list": {
+      "a": ["4"],
+      "e": ["3"],
+      "i": ["1"],
+      "o": ["0"],
+      "b": ["8"],
+      "g": ["9"],
+      "l": ["1"],
+      "q": ["9"],
+      "s": ["5"],
+      "t": ["7"],
+      "z": ["2"]
+    }
   },
   "timeout_seconds": 5,
   "check_ssl": true,

@@ -30,9 +30,23 @@ DEFAULT_CONFIG_FILE = Path("config.json")
 DEFAULT_OUTPUT_DIR = Path("output")
 
 DEFAULT_CONFIG: Dict[str, Any] = {
-    "variations": {
-        "o": ["0"],
-        "i": ["1"],
+    "variation": {
+        "variation_check": False,
+        "variation_list": {
+            "a": ["4"],
+            "e": ["3", "6"],
+            "i": ["1"],
+            "o": ["0"],
+            "b": ["8"],
+            "c": ["6"],
+            "g": ["6", "9"],
+            "l": ["1"],
+            "m": ["3"],
+            "q": ["9"],
+            "s": ["5"],
+            "t": ["7"],
+            "z": ["2"],
+        },
     },
     "timeout_seconds": 5,
     "check_ssl": True,
@@ -305,7 +319,38 @@ def load_config_file(path: Path) -> Tuple[SearchConfig, Path, List[str]]:
     if take_screenshot:
         warnings.append("take_screenshot=true no esta implementado y sera ignorado")
 
-    variations = _normalize_variations(merged.get("variations"), warnings)
+    variation_payload = merged.get("variation")
+    if isinstance(variation_payload, dict):
+        has_new_variation = (
+            "variation_check" in variation_payload
+            or "variation_list" in variation_payload
+        )
+        if has_new_variation:
+            variation_check = bool(variation_payload.get("variation_check", False))
+            raw_variations = variation_payload.get("variation_list", {})
+        else:
+            variation_check = bool(variation_payload.get("check_variations", False))
+            raw_variations = variation_payload.get("variations_list", {})
+            if not raw_variations:
+                raw_variations = variation_payload
+    else:
+        legacy_variations_payload = merged.get("variations", {})
+        if isinstance(legacy_variations_payload, dict):
+            has_legacy_nested = (
+                "check_variations" in legacy_variations_payload
+                or "variations_list" in legacy_variations_payload
+            )
+            if has_legacy_nested:
+                variation_check = bool(legacy_variations_payload.get("check_variations", False))
+                raw_variations = legacy_variations_payload.get("variations_list", {})
+            else:
+                variation_check = bool(merged.get("check_variations", False))
+                raw_variations = legacy_variations_payload
+        else:
+            variation_check = bool(merged.get("check_variations", False))
+            raw_variations = legacy_variations_payload
+
+    variations = _normalize_variations(raw_variations, warnings)
     max_variants = _as_positive_int(merged.get("max_variants_per_domain"), 40)
 
     concurrency = ConcurrencyConfig(
@@ -358,7 +403,7 @@ def load_config_file(path: Path) -> Tuple[SearchConfig, Path, List[str]]:
         retries=retries,
         checks=checks,
         variants=VariantsConfig(
-            enabled=bool(variations),
+            enabled=variation_check and bool(variations),
             max_per_base=max_variants,
             rules=VariantRules(
                 leet=variations,
@@ -397,3 +442,6 @@ def load_bundle(
     source = DomainSource(domains=domains, tlds=tlds)
     warnings = domain_warnings + config_warnings
     return source, config, output_dir, warnings
+
+
+

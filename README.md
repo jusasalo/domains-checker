@@ -78,7 +78,8 @@ También puedes indicar rutas explícitas:
 
 Parámetros más importantes:
 
-- `variations`: reglas de sustitución (ej. `o -> 0`, `i -> 1`).
+- `variation.variation_check`: activa/desactiva la generacion de variaciones (`false` por defecto).
+- `variation.variation_list`: reglas de sustitución (ej. `a -> 4`, `e -> 3`, `i -> 1`, `o -> 0`).
 - `timeout_seconds`: timeout por intento.
 - `check_ssl`: habilita validaciones TLS.
 - `output.format`: `json`, `csv` o ambos.
@@ -152,3 +153,6 @@ pip install rich
 
 - `expiration_date`, `registrar_name` y `registrar_url` dependen de lo que exponga RDAP para cada TLD/registrar.
 - Si un registro RDAP no publica ciertos datos, esos campos pueden venir vacíos.
+
+
+
