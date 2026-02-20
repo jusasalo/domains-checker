@@ -23,5 +23,6 @@ dist/
 *.egg-info/
 
 # Local output artifacts
+output/
 output/results.json
 output/results.csv
