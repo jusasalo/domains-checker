@@ -1,13 +1,8 @@
 {
   "domains": [
-    "clinicos",
-    "labos",
-    "pharmaos",
-    "farmaos",
-    "nexclinic",
-    "nexlab",
-    "nexpharma",
-    "nexfarma"
+    "postek",
+    "postekusa",
+    "postek-usa"
   ],
   "tlds": [
     "com",

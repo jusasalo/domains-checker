@@ -57,10 +57,23 @@ Indicar archivos explícitos:
 
 ```json
 {
-  "domains": ["datadevs", "datalab"],
-  "tlds": ["com", "net", "app", "site"]
+  "domains": [
+    "postek",
+    "postekusa",
+    "postek-usa"
+  ],
+  "tlds": [
+    "com",
+    "net",
+    "tech",
+    "site",
+    "app",
+    "io",
+    "org"
+  ]
 }
 ```
+El repositorio incluye este listado de ejemplo para la campaña Postek, pero puedes reemplazarlo con tus propios dominios o variantes.
 
 ### Parámetros relevantes (`config.json`)
 
