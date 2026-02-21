@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 import sys
-from typing import Any, Iterable, List, Sequence
+from typing import Any, Iterable, List, Sequence, Tuple
 
 from src.core.models import DomainResult, OutputConfig
 
@@ -129,22 +129,39 @@ def _fit(value: str, width: int) -> str:
     return f"{text[:width - 3]}..."
 
 
-def render_console(results: Sequence[DomainResult], output_config: OutputConfig) -> None:
+def build_summary_row(text: str, width: int) -> str:
+    """Construye una fila con bordes verticales y rellena hasta el ancho dado."""
+    if width < 4:
+        return text
+    inner_width = width - 2
+    content = f" {text} "
+    if len(content) > inner_width:
+        content = content[:inner_width]
+    return f"|{content.ljust(inner_width)}|"
+
+
+def render_console(results: Sequence[DomainResult], output_config: OutputConfig) -> Tuple[str, int]:
     columns = [column for column in output_config.columns if column != "registrar_url"]
     if not columns:
         columns = ["full_domain", "status", "expiration_date", "registrar_name"]
     widths = {column: _console_width(column, output_config) for column in columns}
     header_parts = [_fit(column, widths[column]) for column in columns]
     header = " ".join(header_parts)
+    header_line = f"| {header} |"
+    line_length = len(header_line)
+    horizontal_line = f"|{'=' * max(1, line_length - 2)}|"
 
     if rich_console_class is not None:
         console = rich_console_class()
-        console.print(header)
+        console.print()
+        console.print(horizontal_line)
+        console.print(header_line)
+        console.print(horizontal_line)
         previous_group = None
         for result in results:
             current_group = _domain_without_tld(result.domain)
             if previous_group is not None and current_group != previous_group:
-                console.print("")
+                console.print(horizontal_line)
             parts: List[str] = []
             for column in columns:
                 text = _field_text(result, column)
@@ -153,22 +170,29 @@ def render_console(results: Sequence[DomainResult], output_config: OutputConfig)
                     parts.append(f"[{color}]{_fit(text, widths[column])}[/{color}]")
                 else:
                     parts.append(_fit(text, widths[column]))
-            console.print(" ".join(parts))
+            row_text = " ".join(parts)
+            console.print(f"| {row_text} |")
             previous_group = current_group
-        return
+        console.print(horizontal_line)
+        return horizontal_line, line_length
 
-    print(header)
+    print()
+    print(horizontal_line)
+    print(header_line)
+    print(horizontal_line)
     previous_group = None
     for result in results:
         current_group = _domain_without_tld(result.domain)
         if previous_group is not None and current_group != previous_group:
-            print("")
+            print(horizontal_line)
         parts = [
             _fit(_field_text(result, column), widths[column]) for column in columns
         ]
         line = " ".join(parts)
-        print(_ansi_color(line, result.status))
+        print(_ansi_color(f"| {line} |", result.status))
         previous_group = current_group
+    print(horizontal_line)
+    return horizontal_line, line_length
 
 
 def summarize_results(results: Sequence[DomainResult]) -> str:

@@ -10,7 +10,12 @@ from datetime import datetime
 
 from src.config.loader import load_bundle
 from src.core.orchestrator import run_pipeline
-from src.reporting.formatter import render_console, sort_results, summarize_results
+from src.reporting.formatter import (
+    build_summary_row,
+    render_console,
+    sort_results,
+    summarize_results,
+)
 from src.reporting.writer import write_outputs
 
 
@@ -147,9 +152,18 @@ def main() -> int:  # pylint: disable=too-many-return-statements
         output_dir=run_output_dir,
     )
 
+    closing_line = ""
+    table_width = 0
     if search_cfg.output.console:
-        render_console(results, search_cfg.output)
-    print(summarize_results(results))
+        closing_line, table_width = render_console(results, search_cfg.output)
+    summary_line = summarize_results(results)
+    if table_width:
+        print(build_summary_row(summary_line, table_width))
+    else:
+        print(summary_line)
+    if closing_line:
+        print(closing_line)
+        print()
     for warning in all_warnings:
         print(f"[WARN] {warning}")
     for fmt, path in written_paths.items():
